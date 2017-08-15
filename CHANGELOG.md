@@ -1,5 +1,19 @@
 ## 0.10.1 (Unreleased)
 
+BUG FIXES:
+
+* Fix `terraform state rm` and `mv` commands to work correctly with remote state backends [GH-15652]
+
+IMPROVEMENTS:
+
+* helper/schema: Add `GetOkExists` schema function [GH-15723]
+* helper/schema: Make 'id' a reserved field name [GH-15695]
+
+INTERNAL CHANGES:
+
+* DiffFieldReader.ReadField caches results to optimize deeply nested schemas [GH-15663]
+
+
 ## 0.10.0 (August 2, 2017)
 
 **This is the complete 0.9.11 to 0.10.0 CHANGELOG**
