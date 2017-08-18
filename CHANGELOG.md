@@ -1,17 +1,40 @@
-## 0.10.1 (Unreleased)
+## 0.10.3 (Unreleased)
 
-BUG FIXES:
+NEW FEATURES:
 
-* Fix `terraform state rm` and `mv` commands to work correctly with remote state backends [GH-15652]
+* **`flatten` interpolation function**: turns a list of lists, or list of lists of lists, etc into a flat list of primitive values [GH-15278]
 
 IMPROVEMENTS:
 
-* helper/schema: Add `GetOkExists` schema function [GH-15723]
-* helper/schema: Make 'id' a reserved field name [GH-15695]
+* The "creation complete" (and similar) messages from `terraform apply` now include a total elapsed time for each operation. [GH-15548]
+
+## 0.10.2 (August 16, 2017)
+
+BUG FIXES:
+
+* tools/terraform-bundle: Add missing Ui to ProviderInstaller (fix crash) ([#15826](https://github.com/hashicorp/terraform/issues/15826))
+* go-plugin: crash when server emits non-key-value JSON ([go-plugin#43](https://github.com/hashicorp/go-plugin/pull/43))
+
+## 0.10.1 (August 15, 2017)
+
+BUG FIXES:
+
+* Fix `terraform state rm` and `mv` commands to work correctly with remote state backends ([#15652](https://github.com/hashicorp/terraform/issues/15652))
+* Fix errors when interpolations fail during input ([#15780](https://github.com/hashicorp/terraform/issues/15780))
+* Backoff retries in remote-execution provisioner ([#15772](https://github.com/hashicorp/terraform/issues/15772))
+* Load plugins from `~/.terraform.d/plugins/OS_ARCH/` and `.terraformrc` ([#15769](https://github.com/hashicorp/terraform/issues/15769))
+* The `import` command was ignoring the remote state configuration ([#15768](https://github.com/hashicorp/terraform/issues/15768))
+* Don't allow leading slashes in s3 bucket names for remote state ([#15738](https://github.com/hashicorp/terraform/issues/15738))
+
+IMPROVEMENTS:
+
+* helper/schema: Add `GetOkExists` schema function ([#15723](https://github.com/hashicorp/terraform/issues/15723))
+* helper/schema: Make 'id' a reserved field name ([#15695](https://github.com/hashicorp/terraform/issues/15695))
+* command/init: Display version + source when initializing plugins ([#15804](https://github.com/hashicorp/terraform/issues/15804))
 
 INTERNAL CHANGES:
 
-* DiffFieldReader.ReadField caches results to optimize deeply nested schemas [GH-15663]
+* DiffFieldReader.ReadField caches results to optimize deeply nested schemas ([#15663](https://github.com/hashicorp/terraform/issues/15663))
 
 
 ## 0.10.0 (August 2, 2017)
