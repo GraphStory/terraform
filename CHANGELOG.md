@@ -1,19 +1,24 @@
 ## 0.10.3 (Unreleased)
 
+BACKWARDS INCOMPATIBILITIES / NOTES:
+
+* LGPL Dependencies Removed [GH-15862]
+
 NEW FEATURES:
 
 * **`flatten` interpolation function**: turns a list of lists, or list of lists of lists, etc into a flat list of primitive values [GH-15278]
 
 IMPROVEMENTS:
 
-* The "creation complete" (and similar) messages from `terraform apply` now include a total elapsed time for each operation. [GH-15548]
+* cli: The "creation complete" (and similar) messages from `terraform apply` now include a total elapsed time for each operation. [GH-15548]
+* config: The `jsonencode` interpolation function now accepts nested list and map structures, where before it would accept only strings, lists of strings, and maps of strings. [GH-14884]
 
 ## 0.10.2 (August 16, 2017)
 
 BUG FIXES:
 
 * tools/terraform-bundle: Add missing Ui to ProviderInstaller (fix crash) ([#15826](https://github.com/hashicorp/terraform/issues/15826))
-* go-plugin: crash when server emits non-key-value JSON ([go-plugin#43](https://github.com/hashicorp/go-plugin/pull/43))
+* go-plugin: don't crash when server emits non-key-value JSON ([go-plugin#43](https://github.com/hashicorp/go-plugin/pull/43))
 
 ## 0.10.1 (August 15, 2017)
 
